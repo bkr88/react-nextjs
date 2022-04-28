@@ -5,10 +5,10 @@ import MeetupDetail from '../../components/meetups/MeetupDetail';
 const MeetupDetails = (props) => {
   return (
     <MeetupDetail
+      image={props.meetupData.image}
       title={props.meetupData.title}
       address={props.meetupData.address}
       description={props.meetupData.description}
-      image={props.meetupData.image}
     />
   );
 };
@@ -27,7 +27,7 @@ export const getStaticPaths = async () => {
   client.close();
 
   return {
-    fallback: true,
+    fallback: 'blocking',
     paths: meetups.map((meetup) => ({
       params: {
         meetupId: meetup._id.toString(),
