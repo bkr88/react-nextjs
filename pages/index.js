@@ -13,7 +13,7 @@ const HomePage = (props) => {
           content='A bhuge list of highly active meetups'
         />
       </Head>
-      <MeetupList meetups={props.meetups} />;
+      <MeetupList meetups={props.meetups} />
     </>
   );
 };
